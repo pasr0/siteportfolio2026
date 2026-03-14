@@ -1,10 +1,5 @@
 /* ══════════════════════════════════════
-   PROJECT PAGE
-   Toutes les cartouches suivent le format Figma :
-   display: flex; flex-direction: row;
-   justify-content: center; align-items: center;
-   padding: 0px 2px; gap: 10px; height: 35px;
-   background: #000000;
+   PROJECT PAGE — Figma specs exactes
    ══════════════════════════════════════ */
 
 /* ── Project page ── */
@@ -16,7 +11,7 @@
   overflow-x: hidden;
 }
 
-/* ── Back link (cartouche) ── */
+/* ── Back link (cartouche noire h:35) ── */
 .project__back {
   display: flex;
   flex-direction: row;
@@ -47,7 +42,11 @@
   margin-bottom: 80px;
 }
 
-/* ── Project name (large cartouche) ── */
+/* ══════════════════════════════════════
+   TITRE PROJET (cartouche noire h:48)
+   Figma: padding: 0px 2px; height: 48px;
+   background: #000000;
+   ══════════════════════════════════════ */
 .project__name {
   display: flex;
   flex-direction: row;
@@ -55,18 +54,19 @@
   align-items: center;
   padding: 0px 2px;
   gap: 10px;
+  height: 48px;
   width: fit-content;
   background: #000000;
   font-weight: 700;
-  font-size: 72px;
-  line-height: 90px;
+  font-size: 36px;
+  line-height: 45px;
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: #C7C7C7;
   margin-bottom: 20px;
 }
 
-/* ── Meta row ── */
+/* ── Meta row (cartouches noires h:35) ── */
 .project__meta {
   display: flex;
   flex-direction: row;
@@ -92,7 +92,12 @@
   color: #C7C7C7;
 }
 
-/* ── Section titles (cartouche) ── */
+/* ══════════════════════════════════════
+   LABELS (cartouche bleue h:15)
+   Figma: padding: 0px 2px; height: 15px;
+   background: #001AFF;
+   Font: Arial, 400, 13px
+   ══════════════════════════════════════ */
 .project__section-title {
   display: flex;
   flex-direction: row;
@@ -100,31 +105,48 @@
   align-items: center;
   padding: 0px 2px;
   gap: 10px;
-  height: 35px;
+  height: 15px;
   width: fit-content;
-  background: #000000;
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 32px;
-  letter-spacing: -0.05em;
+  background: #001AFF;
+  font-family: 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
   text-transform: uppercase;
-  color: #C7C7C7;
-  margin-bottom: 24px;
+  color: #FFFFFF;
+  margin-bottom: 16px;
 }
 
-/* ── Description ── */
+/* ══════════════════════════════════════
+   PARAGRAPHES EXPLICATIFS (cartouche bleue)
+   Figma: padding: 6px 3px;
+   background: #0019FF;
+   Font: Arial, 400, 13px, line-height: 15px
+   color: #FFFFFF
+   ══════════════════════════════════════ */
 .project__description {
-  max-width: 900px;
+  max-width: 424px;
   margin-bottom: 80px;
 }
 
 .project__description p {
-  font-size: 18px;
-  line-height: 1.7;
-  color: #C7C7C7;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 3px;
+  gap: 10px;
+  background: #0019FF;
+  font-family: 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  color: #FFFFFF;
 }
 
-/* ── Info grid (contexte du projet) ── */
+/* ── Info grid ── */
 .project__info {
   display: flex;
   flex-direction: row;
@@ -139,7 +161,7 @@
   gap: 8px;
 }
 
-/* ── Info label (cartouche) ── */
+/* ── Info label (cartouche bleue h:15) ── */
 .project__info-label {
   display: flex;
   flex-direction: row;
@@ -147,21 +169,26 @@
   align-items: center;
   padding: 0px 2px;
   gap: 10px;
-  height: 35px;
+  height: 15px;
   width: fit-content;
-  background: #000000;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 32px;
-  letter-spacing: -0.05em;
+  background: #001AFF;
+  font-family: 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
   text-transform: uppercase;
-  color: #C7C7C7;
+  color: #FFFFFF;
 }
 
+/* ── Info value (texte blanc Arial 13px) ── */
 .project__info-value {
-  font-size: 16px;
-  line-height: 1.5;
-  color: #C7C7C7;
+  font-family: 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  color: #FFFFFF;
   padding-left: 2px;
 }
 
@@ -210,7 +237,7 @@
   transform: scale(1.02);
 }
 
-/* ── Figcaption (cartouche) ── */
+/* ── Figcaption (cartouche bleue h:15) ── */
 .project__figure figcaption {
   position: absolute;
   bottom: 12px;
@@ -221,14 +248,15 @@
   align-items: center;
   padding: 0px 2px;
   gap: 10px;
-  height: 35px;
-  background: #000000;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 32px;
-  letter-spacing: -0.05em;
+  height: 15px;
+  background: #001AFF;
+  font-family: 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
   text-transform: uppercase;
-  color: #C7C7C7;
+  color: #FFFFFF;
 }
 
 /* ── Image placeholder (quand pas d'image) ── */
@@ -246,7 +274,7 @@
   color: #333;
 }
 
-/* ── Navigation projet (prev/next) ── */
+/* ── Navigation projet (prev/next, cartouche noire h:35) ── */
 .project__nav {
   display: flex;
   justify-content: space-between;
@@ -256,7 +284,6 @@
   margin-top: 40px;
 }
 
-/* ── Nav links (cartouche) ── */
 .project__nav a {
   display: flex;
   flex-direction: row;

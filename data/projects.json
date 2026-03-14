@@ -2,60 +2,70 @@
   "items": [
     {
       "name": "Noranim",
+      "slug": "noranim",
       "type": "Identité graphique",
       "category": "Projet de groupe",
       "year": 2025
     },
     {
       "name": "Article",
+      "slug": "article",
       "type": "Mémoire & Web",
       "category": "Projet de fin d'études",
       "year": 2025
     },
     {
       "name": "Riso",
+      "slug": "riso",
       "type": "Risographie",
       "category": "Workshop & Personnel",
       "year": 2024
     },
     {
       "name": "ANMT",
+      "slug": "anmt",
       "type": "Identité numérique",
       "category": "Projet de cours",
       "year": 2026
     },
     {
       "name": "Volume",
+      "slug": "volume",
       "type": "Édition",
       "category": "Projet de cours",
       "year": 2025
     },
     {
       "name": "Fayot",
+      "slug": "fayot",
       "type": "Jeu de société",
       "category": "Workshop de groupe",
       "year": 2024
     },
     {
       "name": "BDE",
+      "slug": "bde",
       "type": "Communication digitale",
       "category": "Projet personnel",
       "year": 2025
     },
     {
       "name": "Winnie",
+      "slug": "winnie",
       "type": "Motion design",
       "category": "Projet personnel",
       "year": 2025
     },
     {
       "name": "GRG",
+      "slug": "grg",
       "type": "Installation interactive",
       "category": "Workshop de groupe",
       "year": 2026
     },
     {
       "name": "Websérie",
+      "slug": "webserie",
       "type": "Motion design et 3D",
       "category": "Projet de cours",
       "year": 2025

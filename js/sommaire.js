@@ -7,14 +7,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     const data = await res.json();
     const projects = data.items || data;
 
-    list.innerHTML = projects.map(p => `
+    list.innerHTML = projects.map(p => {
+      const slug = p.slug || p.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '-');
+      return `
       <li class="sommaire__item">
-        <span class="sommaire__name">${p.name}</span>
-        <span class="sommaire__type">${p.type}</span>
-        <span class="sommaire__category">${p.category}</span>
-        <span class="sommaire__year">${p.year}</span>
-      </li>
-    `).join('');
+        <a href="project.html?slug=${slug}" class="sommaire__link">
+          <span class="sommaire__name">${p.name}</span>
+          <span class="sommaire__type">${p.type}</span>
+          <span class="sommaire__category">${p.category}</span>
+          <span class="sommaire__year">${p.year}</span>
+        </a>
+      </li>`;
+    }).join('');
   } catch (e) {
     console.error('Erreur chargement projets:', e);
   }

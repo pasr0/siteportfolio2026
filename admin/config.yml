@@ -11,11 +11,11 @@ media_folder: "img"
 public_folder: "/img"
 
 collections:
-  - name: "data"
-    label: "Données"
+  - name: "sommaire"
+    label: "Sommaire"
     files:
-      - name: "projects"
-        label: "Projets"
+      - name: "projects-list"
+        label: "Liste des projets"
         file: "data/projects.json"
         format: "json"
         fields:
@@ -24,6 +24,7 @@ collections:
             widget: "list"
             fields:
               - { name: "name", label: "Nom", widget: "string" }
+              - { name: "slug", label: "Slug (URL)", widget: "string" }
               - { name: "type", label: "Type", widget: "string" }
               - name: "category"
                 label: "Catégorie"
@@ -36,4 +37,32 @@ collections:
                   - "Workshop de groupe"
                   - "Workshop & Personnel"
               - { name: "year", label: "Année", widget: "number", value_type: "int", min: 2020, max: 2030 }
-              - { name: "slug", label: "Slug (URL)", widget: "string", required: false }
+
+  - name: "projets"
+    label: "Pages projets"
+    folder: "data/projects"
+    format: "json"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: "name"
+    fields:
+      - { name: "name", label: "Nom", widget: "string" }
+      - { name: "slug", label: "Slug (URL)", widget: "string" }
+      - { name: "type", label: "Type", widget: "string" }
+      - name: "category"
+        label: "Catégorie"
+        widget: "select"
+        options:
+          - "Projet de groupe"
+          - "Projet de cours"
+          - "Projet personnel"
+          - "Projet de fin d'études"
+          - "Workshop de groupe"
+          - "Workshop & Personnel"
+      - { name: "year", label: "Année", widget: "number", value_type: "int", min: 2020, max: 2030 }
+      - { name: "description", label: "Description", widget: "text", required: false }
+      - name: "images"
+        label: "Images"
+        widget: "list"
+        required: false
+        field: { name: "image", label: "Image", widget: "image" }

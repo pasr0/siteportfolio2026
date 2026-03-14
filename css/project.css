@@ -1,5 +1,7 @@
 /* ══════════════════════════════════════
-   PROJECT PAGE — Figma structure + échelle typo harmonisée
+   PROJECT PAGE — Layout éditorial
+   Inspiré : Carne Bollente, code-switching,
+   Atelier Rhizome, layouts asymétriques
 
    Échelle typographique :
    h1 titre    → 36px  (cartouche noire h:48)
@@ -49,7 +51,7 @@
 
 /* ── Header ── */
 .project__header {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 /* ══════════════════════════════════════
@@ -130,7 +132,7 @@
    ══════════════════════════════════════ */
 .project__description {
   max-width: 520px;
-  margin-bottom: 60px;
+  margin-bottom: 0;
 }
 
 .project__description p {
@@ -150,7 +152,6 @@
   flex-direction: row;
   gap: 36px;
   flex-wrap: wrap;
-  margin-bottom: 60px;
 }
 
 .project__info-item {
@@ -190,34 +191,71 @@
   padding-left: 2px;
 }
 
-/* ── Gallery ── */
-.project__gallery {
-  margin-bottom: 60px;
-}
+/* ══════════════════════════════════════
+   LAYOUT ÉDITORIAL — Rows alternant texte/images
+   ══════════════════════════════════════ */
 
-.project__gallery-grid {
+/* Row = rangée horizontale, grille flexible */
+.project__row {
   display: grid;
   gap: 20px;
+  align-items: start;
+  margin-bottom: 40px;
 }
 
-/* Layouts de galerie */
-.project__gallery-grid--full {
-  grid-template-columns: 1fr;
+/* Variantes de colonnes */
+.project__row--60-40 {
+  grid-template-columns: 3fr 2fr;
 }
 
-.project__gallery-grid--duo {
+.project__row--40-60 {
+  grid-template-columns: 2fr 3fr;
+}
+
+.project__row--50-50 {
   grid-template-columns: 1fr 1fr;
 }
 
-.project__gallery-grid--trio {
+.project__row--33-33-33 {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.project__gallery-grid--mixed {
-  grid-template-columns: 2fr 1fr;
+.project__row--30-40-30 {
+  grid-template-columns: 3fr 4fr 3fr;
 }
 
-/* ── Image figure ── */
+.project__row--70-30 {
+  grid-template-columns: 7fr 3fr;
+}
+
+.project__row--30-70 {
+  grid-template-columns: 3fr 7fr;
+}
+
+.project__row--25-50-25 {
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+/* Cellule texte dans la grille */
+.project__cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.project__cell--center {
+  justify-content: center;
+}
+
+.project__cell--end {
+  justify-content: flex-end;
+}
+
+/* ══════════════════════════════════════
+   IMAGES — plus jamais plein écran par défaut
+   ══════════════════════════════════════ */
+
 .project__figure {
   position: relative;
   overflow: hidden;
@@ -225,8 +263,8 @@
 
 .project__figure img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   display: block;
   transition: transform 0.4s ease;
 }
@@ -235,7 +273,103 @@
   transform: scale(1.02);
 }
 
-/* ── Figcaption (cartouche bleue h:18) ── */
+/* Image contenue dans une hauteur max */
+.project__figure--contained img {
+  max-height: 500px;
+  object-fit: contain;
+  width: auto;
+  margin: 0 auto;
+}
+
+/* Image petite (vignette) */
+.project__figure--sm img {
+  max-height: 300px;
+  object-fit: contain;
+  width: auto;
+}
+
+/* Image moyenne */
+.project__figure--md img {
+  max-height: 450px;
+  object-fit: contain;
+  width: auto;
+}
+
+/* Image couvrant sa cellule */
+.project__figure--cover img {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ══════════════════════════════════════
+   OVERLAY — PNG transparents par-dessus le contenu
+   ══════════════════════════════════════ */
+
+/* Conteneur relatif pour recevoir un overlay */
+.project__overlay-wrap {
+  position: relative;
+}
+
+/* Image overlay positionnée par-dessus */
+.project__overlay {
+  position: absolute;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.project__overlay img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Positions prédéfinies */
+.project__overlay--top-right {
+  top: -30px;
+  right: -40px;
+  width: 45%;
+}
+
+.project__overlay--top-left {
+  top: -20px;
+  left: -30px;
+  width: 40%;
+}
+
+.project__overlay--bottom-right {
+  bottom: -30px;
+  right: -20px;
+  width: 50%;
+}
+
+.project__overlay--bottom-left {
+  bottom: -20px;
+  left: -30px;
+  width: 40%;
+}
+
+.project__overlay--center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+}
+
+.project__overlay--float-right {
+  top: 10%;
+  right: -10%;
+  width: 35%;
+}
+
+.project__overlay--float-left {
+  top: 15%;
+  left: -5%;
+  width: 30%;
+}
+
+/* ══════════════════════════════════════
+   FIGCAPTION (cartouche bleue h:18)
+   ══════════════════════════════════════ */
 .project__figure figcaption {
   position: absolute;
   bottom: 10px;
@@ -257,7 +391,26 @@
   color: #FFFFFF;
 }
 
-/* ── Image placeholder ── */
+/* Caption en-dessous (pas overlay) */
+.project__caption {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 2px;
+  gap: 10px;
+  height: 18px;
+  width: fit-content;
+  background: #001AFF;
+  font-family: 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-top: 8px;
+}
+
+/* ── Image placeholder (au cas où) ── */
 .project__placeholder {
   width: 100%;
   aspect-ratio: 16/9;
@@ -273,7 +426,37 @@
   color: #333;
 }
 
-/* ── Navigation projet (cartouche noire h:28) ── */
+/* ══════════════════════════════════════
+   SÉPARATEUR éditorial
+   ══════════════════════════════════════ */
+.project__separator {
+  width: 100%;
+  height: 2px;
+  background: #000000;
+  margin: 40px 0;
+}
+
+.project__separator--thin {
+  height: 1px;
+  background: rgba(255,255,255,0.15);
+}
+
+/* ── Spacer ── */
+.project__spacer {
+  height: 30px;
+}
+
+.project__spacer--lg {
+  height: 60px;
+}
+
+.project__spacer--sm {
+  height: 15px;
+}
+
+/* ══════════════════════════════════════
+   NAVIGATION (cartouche noire h:28)
+   ══════════════════════════════════════ */
 .project__nav {
   display: flex;
   justify-content: space-between;
@@ -305,9 +488,4 @@
 
 .project__nav a:hover {
   opacity: 0.7;
-}
-
-/* ── Spacer ── */
-.project__spacer {
-  height: 30px;
 }

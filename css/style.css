@@ -1,0 +1,105 @@
+/* ── Reset ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── Base ── */
+body {
+  background-color: #0019FF;
+  color: #C7C7C7;
+  font-family: 'Helvetica Neue eText Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* ── Page container (1920×1080 reference) ── */
+.sommaire {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* ── Title ── */
+.sommaire__title {
+  position: absolute;
+  left: 85px;
+  top: 104px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2px;
+  height: 35px;
+  background: #000000;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 45px;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #C7C7C7;
+}
+
+/* ── List ── */
+.sommaire__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 5px;
+  position: absolute;
+  left: 85px;
+  top: 184px;
+}
+
+/* ── Item row ── */
+.sommaire__item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0;
+  gap: 36px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.sommaire__item:hover {
+  opacity: 0.7;
+}
+
+/* ── Shared span style (black pill) ── */
+.sommaire__item span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2px;
+  height: 35px;
+  background: #000000;
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 35.5px;
+  line-height: 32px;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: #C7C7C7;
+}
+
+/* ── Name column (slightly larger font) ── */
+.sommaire__name {
+  font-size: 36px !important;
+  line-height: 45px !important;
+}
+
+/* ── Visual (3D ornament) ── */
+.sommaire__visual {
+  position: absolute;
+  left: 1237px;
+  top: 421px;
+  pointer-events: none;
+}
+
+.sommaire__visual img {
+  display: block;
+}

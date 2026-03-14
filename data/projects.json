@@ -1,0 +1,64 @@
+{
+  "items": [
+    {
+      "name": "Noranim",
+      "type": "Identité graphique",
+      "category": "Projet de groupe",
+      "year": 2025
+    },
+    {
+      "name": "Article",
+      "type": "Mémoire & Web",
+      "category": "Projet de fin d'études",
+      "year": 2025
+    },
+    {
+      "name": "Riso",
+      "type": "Risographie",
+      "category": "Workshop & Personnel",
+      "year": 2024
+    },
+    {
+      "name": "ANMT",
+      "type": "Identité numérique",
+      "category": "Projet de cours",
+      "year": 2026
+    },
+    {
+      "name": "Volume",
+      "type": "Édition",
+      "category": "Projet de cours",
+      "year": 2025
+    },
+    {
+      "name": "Fayot",
+      "type": "Jeu de société",
+      "category": "Workshop de groupe",
+      "year": 2024
+    },
+    {
+      "name": "BDE",
+      "type": "Communication digitale",
+      "category": "Projet personnel",
+      "year": 2025
+    },
+    {
+      "name": "Winnie",
+      "type": "Motion design",
+      "category": "Projet personnel",
+      "year": 2025
+    },
+    {
+      "name": "GRG",
+      "type": "Installation interactive",
+      "category": "Workshop de groupe",
+      "year": 2026
+    },
+    {
+      "name": "Websérie",
+      "type": "Motion design et 3D",
+      "category": "Projet de cours",
+      "year": 2025
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+# Pour la production (Netlify) : décommenter git-gateway et commenter test-repo
+# backend:
+#   name: git-gateway
+#   branch: main
+
+# Mode test local (sans git)
+backend:
+  name: test-repo
+
+media_folder: "img"
+public_folder: "/img"
+
+collections:
+  - name: "data"
+    label: "Données"
+    files:
+      - name: "projects"
+        label: "Projets"
+        file: "data/projects.json"
+        format: "json"
+        fields:
+          - name: "items"
+            label: "Projets"
+            widget: "list"
+            fields:
+              - { name: "name", label: "Nom", widget: "string" }
+              - { name: "type", label: "Type", widget: "string" }
+              - name: "category"
+                label: "Catégorie"
+                widget: "select"
+                options:
+                  - "Projet de groupe"
+                  - "Projet de cours"
+                  - "Projet personnel"
+                  - "Projet de fin d'études"
+                  - "Workshop de groupe"
+                  - "Workshop & Personnel"
+              - { name: "year", label: "Année", widget: "number", value_type: "int", min: 2020, max: 2030 }
+              - { name: "slug", label: "Slug (URL)", widget: "string", required: false }

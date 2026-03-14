@@ -9,21 +9,62 @@
 </head>
 <body>
   <main class="project">
-    <a href="../index.html" class="project__back">Sommaire</a>
+    <a href="../index.html" class="project__back">&larr; Sommaire</a>
+
     <header class="project__header">
       <h1 class="project__name">Article</h1>
       <div class="project__meta">
-        <span class="project__type">M&eacute;moire &amp; Web</span>
-        <span class="project__category">Projet de fin d'&eacute;tudes</span>
-        <span class="project__year">2025</span>
+        <span>M&eacute;moire &amp; Web</span>
+        <span>Projet de fin d'&eacute;tudes</span>
+        <span>2025</span>
       </div>
     </header>
+
     <section class="project__description">
-      <p>Description du projet Article.</p>
+      <h2 class="project__section-title">Pr&eacute;sentation</h2>
+      <p>Description du projet Article. Ajoutez ici le texte de pr&eacute;sentation du projet.</p>
     </section>
+
+    <section class="project__info">
+      <div class="project__info-item">
+        <span class="project__info-label">Outils</span>
+        <span class="project__info-value">HTML, CSS, JavaScript</span>
+      </div>
+      <div class="project__info-item">
+        <span class="project__info-label">Contexte</span>
+        <span class="project__info-value">Projet de fin d'&eacute;tudes</span>
+      </div>
+      <div class="project__info-item">
+        <span class="project__info-label">Dur&eacute;e</span>
+        <span class="project__info-value">6 mois</span>
+      </div>
+    </section>
+
     <section class="project__gallery">
-      <!-- <img src="../img/projets/article/01.jpg" alt="Article"> -->
+      <h2 class="project__section-title">Galerie</h2>
+      <div class="project__gallery-grid project__gallery-grid--full">
+        <figure class="project__figure">
+          <div class="project__placeholder">Image principale 16:9</div>
+          <figcaption>Vue d'ensemble</figcaption>
+        </figure>
+      </div>
+      <div class="project__spacer"></div>
+      <div class="project__gallery-grid project__gallery-grid--duo">
+        <figure class="project__figure">
+          <div class="project__placeholder">Image 2</div>
+          <figcaption>Recherches</figcaption>
+        </figure>
+        <figure class="project__figure">
+          <div class="project__placeholder">Image 3</div>
+          <figcaption>Maquette web</figcaption>
+        </figure>
+      </div>
     </section>
+
+    <nav class="project__nav">
+      <a href="noranim.html">&larr; Pr&eacute;c&eacute;dent</a>
+      <a href="riso.html">Suivant &rarr;</a>
+    </nav>
   </main>
 </body>
 </html>

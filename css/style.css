@@ -89,8 +89,9 @@ body {
   cursor: pointer;
 }
 
-.sommaire__item:hover {
-  opacity: 0.7;
+.sommaire__item:hover span {
+  background: #C7C7C7;
+  color: #000000;
 }
 
 /* ── Shared span style (black cartouche) ── */

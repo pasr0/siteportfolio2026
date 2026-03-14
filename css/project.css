@@ -42,7 +42,6 @@
   color: #C7C7C7;
   text-decoration: none;
   margin-bottom: 60px;
-  transition: background 0.2s, color 0.2s;
 }
 
 .project__back:hover {
@@ -246,7 +245,6 @@
   max-height: 420px;
   object-fit: contain;
   display: block;
-  transition: filter 0.3s ease;
 }
 
 .project__figure:hover img {
@@ -325,7 +323,6 @@
   text-transform: uppercase;
   color: #C7C7C7;
   text-decoration: none;
-  transition: background 0.2s, color 0.2s;
 }
 
 .project__nav a:hover {

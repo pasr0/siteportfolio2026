@@ -1,7 +1,6 @@
 /* ══════════════════════════════════════
-   PROJECT PAGE — Layout éditorial
-   Inspiré : Carne Bollente, code-switching,
-   Atelier Rhizome, layouts asymétriques
+   PROJECT PAGE — Fond blanc, images réduites,
+   vidéos prioritaires, hover inversé
 
    Échelle typographique :
    h1 titre    → 36px  (cartouche noire h:48)
@@ -13,16 +12,17 @@
    nav/back    → 16px  (cartouche noire h:28)
    ══════════════════════════════════════ */
 
-/* ── Project page ── */
+/* ── Project page — fond blanc ── */
 .project {
   position: relative;
   width: 100%;
   min-height: 100vh;
   padding: 50px 85px;
   overflow-x: hidden;
+  background: #FFFFFF;
 }
 
-/* ── Back link (cartouche noire) ── */
+/* ── Back link (cartouche noire, hover inversé) ── */
 .project__back {
   display: flex;
   flex-direction: row;
@@ -42,11 +42,12 @@
   color: #C7C7C7;
   text-decoration: none;
   margin-bottom: 60px;
-  transition: opacity 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 
 .project__back:hover {
-  opacity: 0.7;
+  background: #C7C7C7;
+  color: #000000;
 }
 
 /* ── Header ── */
@@ -132,7 +133,7 @@
    ══════════════════════════════════════ */
 .project__description {
   max-width: 520px;
-  margin-bottom: 0;
+  margin-bottom: 60px;
 }
 
 .project__description p {
@@ -152,6 +153,7 @@
   flex-direction: row;
   gap: 36px;
   flex-wrap: wrap;
+  margin-bottom: 60px;
 }
 
 .project__info-item {
@@ -180,82 +182,60 @@
   color: #FFFFFF;
 }
 
-/* ── Info value ── */
+/* ── Info value (noir sur fond blanc) ── */
 .project__info-value {
   font-family: 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: #000000;
   padding-left: 2px;
 }
 
 /* ══════════════════════════════════════
-   LAYOUT ÉDITORIAL — Rows alternant texte/images
+   VIDÉO — prioritaire en haut de page
    ══════════════════════════════════════ */
-
-/* Row = rangée horizontale, grille flexible */
-.project__row {
-  display: grid;
-  gap: 20px;
-  align-items: start;
-  margin-bottom: 40px;
+.project__video-section {
+  margin-bottom: 50px;
 }
 
-/* Variantes de colonnes */
-.project__row--60-40 {
-  grid-template-columns: 3fr 2fr;
-}
-
-.project__row--40-60 {
-  grid-template-columns: 2fr 3fr;
-}
-
-.project__row--50-50 {
-  grid-template-columns: 1fr 1fr;
-}
-
-.project__row--33-33-33 {
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.project__row--30-40-30 {
-  grid-template-columns: 3fr 4fr 3fr;
-}
-
-.project__row--70-30 {
-  grid-template-columns: 7fr 3fr;
-}
-
-.project__row--30-70 {
-  grid-template-columns: 3fr 7fr;
-}
-
-.project__row--25-50-25 {
-  grid-template-columns: 1fr 2fr 1fr;
-}
-
-/* Cellule texte dans la grille */
-.project__cell {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 16px;
-}
-
-.project__cell--center {
-  justify-content: center;
-}
-
-.project__cell--end {
-  justify-content: flex-end;
+.project__video {
+  width: 100%;
+  max-width: 720px;
+  display: block;
+  margin-bottom: 16px;
 }
 
 /* ══════════════════════════════════════
-   IMAGES — plus jamais plein écran par défaut
+   GALERIE — images réduites
    ══════════════════════════════════════ */
+.project__gallery {
+  margin-bottom: 60px;
+}
 
+.project__gallery-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.project__gallery-grid--full {
+  grid-template-columns: 1fr;
+}
+
+.project__gallery-grid--duo {
+  grid-template-columns: 1fr 1fr;
+}
+
+.project__gallery-grid--trio {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.project__gallery-grid--mixed {
+  grid-template-columns: 2fr 1fr;
+}
+
+/* ── Figure — images réduites, PAS de zoom hover ── */
 .project__figure {
   position: relative;
   overflow: hidden;
@@ -263,113 +243,17 @@
 
 .project__figure img {
   width: 100%;
-  height: auto;
+  max-height: 420px;
   object-fit: contain;
   display: block;
-  transition: transform 0.4s ease;
+  transition: filter 0.3s ease;
 }
 
 .project__figure:hover img {
-  transform: scale(1.02);
+  filter: brightness(0.92);
 }
 
-/* Image contenue dans une hauteur max */
-.project__figure--contained img {
-  max-height: 500px;
-  object-fit: contain;
-  width: auto;
-  margin: 0 auto;
-}
-
-/* Image petite (vignette) */
-.project__figure--sm img {
-  max-height: 300px;
-  object-fit: contain;
-  width: auto;
-}
-
-/* Image moyenne */
-.project__figure--md img {
-  max-height: 450px;
-  object-fit: contain;
-  width: auto;
-}
-
-/* Image couvrant sa cellule */
-.project__figure--cover img {
-  height: 100%;
-  object-fit: cover;
-}
-
-/* ══════════════════════════════════════
-   OVERLAY — PNG transparents par-dessus le contenu
-   ══════════════════════════════════════ */
-
-/* Conteneur relatif pour recevoir un overlay */
-.project__overlay-wrap {
-  position: relative;
-}
-
-/* Image overlay positionnée par-dessus */
-.project__overlay {
-  position: absolute;
-  pointer-events: none;
-  z-index: 10;
-}
-
-.project__overlay img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Positions prédéfinies */
-.project__overlay--top-right {
-  top: -30px;
-  right: -40px;
-  width: 45%;
-}
-
-.project__overlay--top-left {
-  top: -20px;
-  left: -30px;
-  width: 40%;
-}
-
-.project__overlay--bottom-right {
-  bottom: -30px;
-  right: -20px;
-  width: 50%;
-}
-
-.project__overlay--bottom-left {
-  bottom: -20px;
-  left: -30px;
-  width: 40%;
-}
-
-.project__overlay--center {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60%;
-}
-
-.project__overlay--float-right {
-  top: 10%;
-  right: -10%;
-  width: 35%;
-}
-
-.project__overlay--float-left {
-  top: 15%;
-  left: -5%;
-  width: 30%;
-}
-
-/* ══════════════════════════════════════
-   FIGCAPTION (cartouche bleue h:18)
-   ══════════════════════════════════════ */
+/* ── Figcaption (cartouche bleue h:18) ── */
 .project__figure figcaption {
   position: absolute;
   bottom: 10px;
@@ -391,30 +275,11 @@
   color: #FFFFFF;
 }
 
-/* Caption en-dessous (pas overlay) */
-.project__caption {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0px 2px;
-  gap: 10px;
-  height: 18px;
-  width: fit-content;
-  background: #001AFF;
-  font-family: 'Arial', sans-serif;
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 18px;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  margin-top: 8px;
-}
-
-/* ── Image placeholder (au cas où) ── */
+/* ── Image placeholder ── */
 .project__placeholder {
   width: 100%;
   aspect-ratio: 16/9;
-  background: #000000;
+  background: #F0F0F0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -423,22 +288,7 @@
   font-size: 13px;
   letter-spacing: -0.05em;
   text-transform: uppercase;
-  color: #333;
-}
-
-/* ══════════════════════════════════════
-   SÉPARATEUR éditorial
-   ══════════════════════════════════════ */
-.project__separator {
-  width: 100%;
-  height: 2px;
-  background: #000000;
-  margin: 40px 0;
-}
-
-.project__separator--thin {
-  height: 1px;
-  background: rgba(255,255,255,0.15);
+  color: #999;
 }
 
 /* ── Spacer ── */
@@ -446,16 +296,8 @@
   height: 30px;
 }
 
-.project__spacer--lg {
-  height: 60px;
-}
-
-.project__spacer--sm {
-  height: 15px;
-}
-
 /* ══════════════════════════════════════
-   NAVIGATION (cartouche noire h:28)
+   NAVIGATION (cartouche noire h:28, hover inversé)
    ══════════════════════════════════════ */
 .project__nav {
   display: flex;
@@ -483,9 +325,10 @@
   text-transform: uppercase;
   color: #C7C7C7;
   text-decoration: none;
-  transition: opacity 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 
 .project__nav a:hover {
-  opacity: 0.7;
+  background: #C7C7C7;
+  color: #000000;
 }

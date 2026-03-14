@@ -1,5 +1,14 @@
 /* ══════════════════════════════════════
-   PROJECT PAGE — Figma specs exactes
+   PROJECT PAGE — Figma structure + échelle typo harmonisée
+
+   Échelle typographique :
+   h1 titre    → 36px  (cartouche noire h:48)
+   meta        → 20px  (cartouche noire h:28)
+   h2 section  → 16px  (cartouche bleue h:22)
+   body text   → 15px / line-height 22px (cartouche bleue)
+   labels      → 14px  (cartouche bleue h:20)
+   captions    → 13px  (cartouche bleue h:18)
+   nav/back    → 16px  (cartouche noire h:28)
    ══════════════════════════════════════ */
 
 /* ── Project page ── */
@@ -11,7 +20,7 @@
   overflow-x: hidden;
 }
 
-/* ── Back link (cartouche noire h:35) ── */
+/* ── Back link (cartouche noire) ── */
 .project__back {
   display: flex;
   flex-direction: row;
@@ -19,12 +28,13 @@
   align-items: center;
   padding: 0px 2px;
   gap: 10px;
-  height: 35px;
+  height: 28px;
   width: fit-content;
   background: #000000;
+  font-family: 'Helvetica Neue eText Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 32px;
+  font-size: 16px;
+  line-height: 28px;
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: #C7C7C7;
@@ -39,13 +49,11 @@
 
 /* ── Header ── */
 .project__header {
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 /* ══════════════════════════════════════
    TITRE PROJET (cartouche noire h:48)
-   Figma: padding: 0px 2px; height: 48px;
-   background: #000000;
    ══════════════════════════════════════ */
 .project__name {
   display: flex;
@@ -57,21 +65,22 @@
   height: 48px;
   width: fit-content;
   background: #000000;
+  font-family: 'Helvetica Neue eText Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-size: 36px;
   line-height: 45px;
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: #C7C7C7;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
-/* ── Meta row (cartouches noires h:35) ── */
+/* ── Meta row (cartouches noires h:28) ── */
 .project__meta {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 36px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
@@ -82,21 +91,19 @@
   align-items: center;
   padding: 0px 2px;
   gap: 10px;
-  height: 35px;
+  height: 28px;
   background: #000000;
+  font-family: 'Helvetica Neue eText Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
-  font-size: 35.5px;
-  line-height: 32px;
+  font-size: 20px;
+  line-height: 28px;
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: #C7C7C7;
 }
 
 /* ══════════════════════════════════════
-   LABELS (cartouche bleue h:15)
-   Figma: padding: 0px 2px; height: 15px;
-   background: #001AFF;
-   Font: Arial, 400, 13px
+   TITRES DE SECTION (cartouche bleue h:22)
    ══════════════════════════════════════ */
 .project__section-title {
   display: flex;
@@ -105,14 +112,14 @@
   align-items: center;
   padding: 0px 2px;
   gap: 10px;
-  height: 15px;
+  height: 22px;
   width: fit-content;
   background: #001AFF;
   font-family: 'Arial', sans-serif;
   font-style: normal;
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 15px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
   text-transform: uppercase;
   color: #FFFFFF;
   margin-bottom: 16px;
@@ -120,29 +127,20 @@
 
 /* ══════════════════════════════════════
    PARAGRAPHES EXPLICATIFS (cartouche bleue)
-   Figma: padding: 6px 3px;
-   background: #0019FF;
-   Font: Arial, 400, 13px, line-height: 15px
-   color: #FFFFFF
    ══════════════════════════════════════ */
 .project__description {
-  max-width: 424px;
-  margin-bottom: 80px;
+  max-width: 520px;
+  margin-bottom: 60px;
 }
 
 .project__description p {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 6px 3px;
-  gap: 10px;
+  padding: 8px 6px;
   background: #0019FF;
   font-family: 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 13px;
-  line-height: 15px;
+  font-size: 15px;
+  line-height: 22px;
   color: #FFFFFF;
 }
 
@@ -152,16 +150,16 @@
   flex-direction: row;
   gap: 36px;
   flex-wrap: wrap;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .project__info-item {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
-/* ── Info label (cartouche bleue h:15) ── */
+/* ── Info label (cartouche bleue h:20) ── */
 .project__info-label {
   display: flex;
   flex-direction: row;
@@ -169,32 +167,32 @@
   align-items: center;
   padding: 0px 2px;
   gap: 10px;
-  height: 15px;
+  height: 20px;
   width: fit-content;
   background: #001AFF;
   font-family: 'Arial', sans-serif;
   font-style: normal;
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 15px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
   text-transform: uppercase;
   color: #FFFFFF;
 }
 
-/* ── Info value (texte blanc Arial 13px) ── */
+/* ── Info value ── */
 .project__info-value {
   font-family: 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 13px;
-  line-height: 15px;
+  font-size: 15px;
+  line-height: 20px;
   color: #FFFFFF;
   padding-left: 2px;
 }
 
 /* ── Gallery ── */
 .project__gallery {
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .project__gallery-grid {
@@ -237,29 +235,29 @@
   transform: scale(1.02);
 }
 
-/* ── Figcaption (cartouche bleue h:15) ── */
+/* ── Figcaption (cartouche bleue h:18) ── */
 .project__figure figcaption {
   position: absolute;
-  bottom: 12px;
-  left: 12px;
+  bottom: 10px;
+  left: 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 0px 2px;
   gap: 10px;
-  height: 15px;
+  height: 18px;
   background: #001AFF;
   font-family: 'Arial', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
-  line-height: 15px;
+  line-height: 18px;
   text-transform: uppercase;
   color: #FFFFFF;
 }
 
-/* ── Image placeholder (quand pas d'image) ── */
+/* ── Image placeholder ── */
 .project__placeholder {
   width: 100%;
   aspect-ratio: 16/9;
@@ -267,19 +265,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 700;
-  font-size: 18px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: #333;
 }
 
-/* ── Navigation projet (prev/next, cartouche noire h:35) ── */
+/* ── Navigation projet (cartouche noire h:28) ── */
 .project__nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 60px;
+  padding-top: 40px;
   border-top: 2px solid #000000;
   margin-top: 40px;
 }
@@ -291,11 +290,12 @@
   align-items: center;
   padding: 0px 2px;
   gap: 10px;
-  height: 35px;
+  height: 28px;
   background: #000000;
+  font-family: 'Helvetica Neue eText Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 32px;
+  font-size: 16px;
+  line-height: 28px;
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: #C7C7C7;
@@ -309,5 +309,5 @@
 
 /* ── Spacer ── */
 .project__spacer {
-  height: 40px;
+  height: 30px;
 }

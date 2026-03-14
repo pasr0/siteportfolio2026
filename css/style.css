@@ -14,23 +14,26 @@ body {
   overflow-x: hidden;
 }
 
-/* ── Cartouche (shared tag style) ── */
-.tag {
-  display: inline-flex;
+/* ══════════════════════════════════════
+   CARTOUCHE — style Figma exact
+   padding: 0 2px, height: 35px,
+   flex row, justify-content: center,
+   align-items: center
+   ══════════════════════════════════════ */
+.cartouche {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 4px 10px;
+  padding: 0px 2px;
+  gap: 10px;
+  height: 35px;
   background: #000000;
-  white-space: nowrap;
   font-weight: 700;
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: #C7C7C7;
-  text-decoration: none;
-}
-
-.tag:hover {
-  opacity: 0.7;
+  white-space: nowrap;
 }
 
 /* ── Page container (1920×1080 reference) ── */
@@ -45,10 +48,13 @@ body {
   position: absolute;
   left: 85px;
   top: 104px;
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 4px 10px;
+  padding: 0px 2px;
+  gap: 10px;
+  height: 35px;
   background: #000000;
   font-weight: 700;
   font-size: 36px;
@@ -87,12 +93,14 @@ body {
   opacity: 0.7;
 }
 
-/* ── Shared span style (black pill) ── */
+/* ── Shared span style (black cartouche) ── */
 .sommaire__item span {
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 4px 10px;
+  padding: 0px 2px;
+  gap: 10px;
   height: 35px;
   background: #000000;
   white-space: nowrap;

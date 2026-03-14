@@ -1,3 +1,12 @@
+/* ══════════════════════════════════════
+   PROJECT PAGE
+   Toutes les cartouches suivent le format Figma :
+   display: flex; flex-direction: row;
+   justify-content: center; align-items: center;
+   padding: 0px 2px; gap: 10px; height: 35px;
+   background: #000000;
+   ══════════════════════════════════════ */
+
 /* ── Project page ── */
 .project {
   position: relative;
@@ -7,17 +16,20 @@
   overflow-x: hidden;
 }
 
-/* ── Back link ── */
+/* ── Back link (cartouche) ── */
 .project__back {
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 4px 10px;
+  padding: 0px 2px;
+  gap: 10px;
   height: 35px;
+  width: fit-content;
   background: #000000;
   font-weight: 700;
   font-size: 20px;
-  line-height: 35px;
+  line-height: 32px;
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: #C7C7C7;
@@ -35,48 +47,65 @@
   margin-bottom: 80px;
 }
 
+/* ── Project name (large cartouche) ── */
 .project__name {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 2px;
+  gap: 10px;
+  width: fit-content;
+  background: #000000;
   font-weight: 700;
-  font-size: 96px;
-  line-height: 1;
+  font-size: 72px;
+  line-height: 90px;
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: #C7C7C7;
-  background: #000000;
-  padding: 8px 16px;
-  display: inline-block;
   margin-bottom: 20px;
 }
 
+/* ── Meta row ── */
 .project__meta {
   display: flex;
-  gap: 20px;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 36px;
   flex-wrap: wrap;
 }
 
 .project__meta span {
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 4px 10px;
+  padding: 0px 2px;
+  gap: 10px;
   height: 35px;
   background: #000000;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 35.5px;
   line-height: 32px;
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: #C7C7C7;
 }
 
-/* ── Section titles ── */
+/* ── Section titles (cartouche) ── */
 .project__section-title {
-  display: inline-flex;
-  padding: 4px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 2px;
+  gap: 10px;
+  height: 35px;
+  width: fit-content;
   background: #000000;
   font-weight: 700;
   font-size: 28px;
-  line-height: 36px;
+  line-height: 32px;
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: #C7C7C7;
@@ -93,18 +122,14 @@
   font-size: 18px;
   line-height: 1.7;
   color: #C7C7C7;
-  background: #000000;
-  padding: 12px 16px;
-  display: inline;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
 }
 
 /* ── Info grid (contexte du projet) ── */
 .project__info {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 36px;
+  flex-wrap: wrap;
   margin-bottom: 80px;
 }
 
@@ -114,23 +139,30 @@
   gap: 8px;
 }
 
+/* ── Info label (cartouche) ── */
 .project__info-label {
-  display: inline-flex;
-  padding: 4px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 2px;
+  gap: 10px;
+  height: 35px;
+  width: fit-content;
   background: #000000;
   font-weight: 700;
   font-size: 16px;
+  line-height: 32px;
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: #C7C7C7;
-  align-self: flex-start;
 }
 
 .project__info-value {
   font-size: 16px;
   line-height: 1.5;
   color: #C7C7C7;
-  padding-left: 10px;
+  padding-left: 2px;
 }
 
 /* ── Gallery ── */
@@ -178,15 +210,22 @@
   transform: scale(1.02);
 }
 
+/* ── Figcaption (cartouche) ── */
 .project__figure figcaption {
   position: absolute;
   bottom: 12px;
   left: 12px;
-  display: inline-flex;
-  padding: 4px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 2px;
+  gap: 10px;
+  height: 35px;
   background: #000000;
   font-weight: 700;
   font-size: 14px;
+  line-height: 32px;
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: #C7C7C7;
@@ -217,12 +256,19 @@
   margin-top: 40px;
 }
 
+/* ── Nav links (cartouche) ── */
 .project__nav a {
-  display: inline-flex;
-  padding: 4px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 2px;
+  gap: 10px;
+  height: 35px;
   background: #000000;
   font-weight: 700;
   font-size: 20px;
+  line-height: 32px;
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: #C7C7C7;

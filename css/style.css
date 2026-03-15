@@ -7,62 +7,39 @@
 
 /* ── Base ── */
 body {
-  background-color: #0019FF;
-  color: #C7C7C7;
-  font-family: 'Helvetica Neue eText Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #FFFFFF;
+  color: #0019FF;
+  font-family: 'Arial', sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
 }
 
-/* ══════════════════════════════════════
-   CARTOUCHE — style Figma exact
-   padding: 0 2px, height: 35px,
-   flex row, justify-content: center,
-   align-items: center
-   ══════════════════════════════════════ */
-.cartouche {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 2px;
-  gap: 10px;
-  height: 35px;
-  background: #000000;
-  font-weight: 700;
-  letter-spacing: -0.05em;
-  text-transform: uppercase;
-  color: #C7C7C7;
-  white-space: nowrap;
-}
-
-/* ── Page container (1920×1080 reference) ── */
+/* ── Page container ── */
 .sommaire {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+/* ── Blue rounded rectangle container ── */
+.sommaire__container {
+  background: #0019FF;
+  border-radius: 31px;
+  padding: 60px 80px;
+  min-height: calc(100vh - 80px);
 }
 
 /* ── Title ── */
 .sommaire__title {
-  position: absolute;
-  left: 85px;
-  top: 104px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 2px;
-  gap: 10px;
-  height: 35px;
-  background: #000000;
+  font-family: 'Arial', sans-serif;
   font-weight: 700;
-  font-size: 36px;
-  line-height: 45px;
-  letter-spacing: -0.05em;
+  font-size: 15px;
+  line-height: 17px;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
-  text-decoration: none;
-  color: #C7C7C7;
+  color: #FFFFFF;
+  margin-bottom: 30px;
 }
 
 /* ── List ── */
@@ -72,10 +49,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   padding: 0;
-  gap: 5px;
-  position: absolute;
-  left: 85px;
-  top: 184px;
+  gap: 4px;
 }
 
 /* ── Item row ── */
@@ -84,61 +58,49 @@ body {
   flex-direction: row;
   align-items: flex-start;
   padding: 0;
-  gap: 36px;
-  height: 35px;
   cursor: pointer;
-}
-
-.sommaire__item:hover span {
-  background: #C7C7C7;
-  color: #000000;
-}
-
-/* ── Shared span style (black cartouche) ── */
-.sommaire__item span {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 2px;
-  gap: 10px;
-  height: 35px;
-  background: #000000;
-  white-space: nowrap;
-  font-weight: 700;
-  font-size: 35.5px;
-  line-height: 32px;
-  letter-spacing: -0.05em;
-  text-transform: uppercase;
-  color: #C7C7C7;
-  transition: background 0s, color 0s;
+  width: 100%;
 }
 
 /* ── Link wrapper ── */
 .sommaire__link {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 36px;
-  height: 35px;
+  display: grid;
+  grid-template-columns: 140px 1fr 1fr 50px;
+  gap: 20px;
   text-decoration: none;
-  color: inherit;
+  color: #FFFFFF;
+  width: 100%;
+  padding: 2px 0;
 }
 
-/* ── Name column (slightly larger font) ── */
+.sommaire__link:hover {
+  background: #FFFFFF;
+  color: #0019FF;
+}
+
+.sommaire__link:hover span {
+  color: #0019FF;
+}
+
+/* ── Shared span style ── */
+.sommaire__item span {
+  white-space: nowrap;
+  font-family: 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 17px;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+  transition: color 0s;
+}
+
+/* ── Name column ── */
 .sommaire__name {
-  font-size: 36px !important;
-  line-height: 45px !important;
+  font-weight: 700 !important;
+  min-width: 140px;
 }
 
 /* ── Visual (3D ornament) ── */
 .sommaire__visual {
-  position: absolute;
-  left: 1237px;
-  top: 421px;
-  pointer-events: none;
-}
-
-.sommaire__visual img {
-  display: block;
+  display: none;
 }

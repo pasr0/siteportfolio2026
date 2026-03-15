@@ -1,332 +1,287 @@
 /* ══════════════════════════════════════
-   PROJECT PAGE — Fond blanc, images réduites,
-   vidéos prioritaires, hover inversé
-
-   Échelle typographique :
-   h1 titre    → 36px  (cartouche noire h:48)
-   meta        → 20px  (cartouche noire h:28)
-   h2 section  → 16px  (cartouche bleue h:22)
-   body text   → 15px / line-height 22px (cartouche bleue)
-   labels      → 14px  (cartouche bleue h:20)
-   captions    → 13px  (cartouche bleue h:18)
-   nav/back    → 16px  (cartouche noire h:28)
+   PROJECT PAGE — Layout éditorial plein écran
+   Reproduit les spreads du portfolio PDF
    ══════════════════════════════════════ */
 
-/* ── Project page — fond blanc ── */
+/* ── Base ── */
 .project {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  padding: 50px 85px;
-  overflow-x: hidden;
   background: #FFFFFF;
+  overflow-x: hidden;
 }
 
-/* ── Back link (cartouche noire, hover inversé) ── */
+/* ── Back link (discret, en haut à gauche) ── */
 .project__back {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 2px;
-  gap: 10px;
-  height: 28px;
-  width: fit-content;
-  background: #000000;
-  font-family: 'Helvetica Neue eText Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 28px;
-  letter-spacing: -0.05em;
-  text-transform: uppercase;
-  color: #C7C7C7;
+  position: fixed;
+  top: 20px;
+  left: 30px;
+  z-index: 100;
+  font-family: 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: -0.01em;
+  color: #0019FF;
+  background: #FFFFFF;
+  padding: 2px 6px;
   text-decoration: none;
-  margin-bottom: 60px;
 }
 
 .project__back:hover {
-  background: #C7C7C7;
-  color: #000000;
-}
-
-/* ── Header ── */
-.project__header {
-  margin-bottom: 40px;
-}
-
-/* ══════════════════════════════════════
-   TITRE PROJET (cartouche noire h:48)
-   ══════════════════════════════════════ */
-.project__name {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 2px;
-  gap: 10px;
-  height: 48px;
-  width: fit-content;
-  background: #000000;
-  font-family: 'Helvetica Neue eText Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 45px;
-  letter-spacing: -0.05em;
-  text-transform: uppercase;
-  color: #C7C7C7;
-  margin-bottom: 16px;
-}
-
-/* ── Meta row (cartouches noires h:28) ── */
-.project__meta {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.project__meta span {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 2px;
-  gap: 10px;
-  height: 28px;
-  background: #000000;
-  font-family: 'Helvetica Neue eText Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 28px;
-  letter-spacing: -0.05em;
-  text-transform: uppercase;
-  color: #C7C7C7;
-}
-
-/* ══════════════════════════════════════
-   TITRES DE SECTION (cartouche bleue h:22)
-   ══════════════════════════════════════ */
-.project__section-title {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 2px;
-  gap: 10px;
-  height: 22px;
-  width: fit-content;
-  background: #001AFF;
-  font-family: 'Arial', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 22px;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  margin-bottom: 16px;
-}
-
-/* ══════════════════════════════════════
-   PARAGRAPHES EXPLICATIFS (cartouche bleue)
-   ══════════════════════════════════════ */
-.project__description {
-  max-width: 520px;
-  margin-bottom: 60px;
-}
-
-.project__description p {
-  padding: 8px 6px;
   background: #0019FF;
-  font-family: 'Arial', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 22px;
   color: #FFFFFF;
+  transition: background 0s, color 0s;
 }
 
-/* ── Info grid ── */
-.project__info {
+/* ══════════════════════════════════════
+   HEADER — Barre méta pleine largeur
+   Position absolue en haut, z-index au-dessus
+   des images, cartouches blanches texte bleu
+   ══════════════════════════════════════ */
+.project__header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
   display: flex;
   flex-direction: row;
-  gap: 36px;
-  flex-wrap: wrap;
-  margin-bottom: 60px;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 60px 84px 0 84px;
+  pointer-events: none;
 }
 
-.project__info-item {
+.project__header span {
+  font-family: 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.05em;
+  color: #0019FF;
+  background: #FFFFFF;
+  padding: 0px 2px;
+  white-space: nowrap;
+  pointer-events: auto;
+}
+
+.project__name {
+  font-weight: 700 !important;
+}
+
+/* ══════════════════════════════════════
+   SPREAD — Layout éditorial principal
+   Remplit le viewport, grille 2 colonnes
+   ══════════════════════════════════════ */
+.project__spread {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Variantes de split */
+.project__spread--left-heavy {
+  grid-template-columns: 3fr 2fr;
+}
+
+.project__spread--right-heavy {
+  grid-template-columns: 2fr 3fr;
+}
+
+/* ── Colonne de spread ── */
+.project__col {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.project__col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Colonne avec contenu (image + texte) */
+.project__col--content {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 100px 50px 40px 50px;
 }
 
-/* ── Info label (cartouche bleue h:20) ── */
-.project__info-label {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 2px;
-  gap: 10px;
-  height: 20px;
-  width: fit-content;
-  background: #001AFF;
-  font-family: 'Arial', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 20px;
-  text-transform: uppercase;
-  color: #FFFFFF;
-}
-
-/* ── Info value (noir sur fond blanc) ── */
-.project__info-value {
-  font-family: 'Arial', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 20px;
-  color: #000000;
-  padding-left: 2px;
-}
-
-/* ══════════════════════════════════════
-   VIDÉO — prioritaire en haut de page
-   ══════════════════════════════════════ */
-.project__video-section {
-  margin-bottom: 50px;
-}
-
-.project__video {
+.project__col--content img {
   width: 100%;
-  max-width: 720px;
-  display: block;
-  margin-bottom: 16px;
+  height: auto;
+  max-height: 60vh;
+  object-fit: contain;
+  flex-shrink: 1;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+/* Colonne avec image en bas et desc en bas */
+.project__col--bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.project__col--bottom img {
+  height: auto;
+  object-fit: contain;
 }
 
 /* ══════════════════════════════════════
-   GALERIE — images réduites
+   DESCRIPTION — Bloc bleu, texte blanc
+   Positionné en bas d'une colonne
    ══════════════════════════════════════ */
-.project__gallery {
-  margin-bottom: 60px;
+.project__desc {
+  padding: 6px;
+  background: #0019FF;
+  font-family: 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 92%;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+  max-width: 480px;
 }
 
-.project__gallery-grid {
+/* Description superposée (absolute) */
+.project__desc--overlay {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  z-index: 5;
+}
+
+/* Description superposée à droite */
+.project__desc--overlay-right {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  left: auto;
+  z-index: 5;
+}
+
+/* Lien dans la description */
+.project__desc a {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+/* ══════════════════════════════════════
+   SPREAD MOSAIC — Layout multi-images
+   Pour projets avec 3-4+ images en grille
+   ══════════════════════════════════════ */
+.project__spread--mosaic {
   display: grid;
-  gap: 20px;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  min-height: 100vh;
+  width: 100%;
 }
 
-.project__gallery-grid--full {
-  grid-template-columns: 1fr;
-}
-
-.project__gallery-grid--duo {
-  grid-template-columns: 1fr 1fr;
-}
-
-.project__gallery-grid--trio {
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.project__gallery-grid--mixed {
-  grid-template-columns: 2fr 1fr;
-}
-
-/* ── Figure — images réduites, PAS de zoom hover ── */
-.project__figure {
+.project__spread--mosaic .project__cell {
   position: relative;
   overflow: hidden;
 }
 
-.project__figure img {
+.project__spread--mosaic .project__cell img {
   width: 100%;
-  max-height: 250px;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
-.project__figure:hover img {
-  filter: brightness(0.88);
-  transition: filter 0s;
+/* Cellule qui s'étend sur 2 rangées */
+.project__cell--tall {
+  grid-row: span 2;
 }
 
-/* ── Figcaption (cartouche bleue h:18) ── */
-.project__figure figcaption {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 2px;
-  gap: 10px;
-  height: 18px;
-  background: #001AFF;
-  font-family: 'Arial', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 18px;
-  text-transform: uppercase;
-  color: #FFFFFF;
-}
-
-/* ── Image placeholder ── */
-.project__placeholder {
-  width: 100%;
-  aspect-ratio: 16/9;
-  background: #F0F0F0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Arial', sans-serif;
-  font-weight: 400;
-  font-size: 13px;
-  letter-spacing: -0.05em;
-  text-transform: uppercase;
-  color: #999;
-}
-
-/* ── Spacer ── */
-.project__spacer {
-  height: 30px;
+/* Cellule qui s'étend sur 2 colonnes */
+.project__cell--wide {
+  grid-column: span 2;
 }
 
 /* ══════════════════════════════════════
-   NAVIGATION (cartouche noire h:28, hover inversé)
+   SPREAD TRIPLE — 3 colonnes égales
+   ══════════════════════════════════════ */
+.project__spread--triple {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ══════════════════════════════════════
+   SECTION SUPPLÉMENTAIRE — images en dessous
+   ══════════════════════════════════════ */
+.project__extra {
+  display: grid;
+  gap: 4px;
+  padding: 4px;
+}
+
+.project__extra--duo {
+  grid-template-columns: 1fr 1fr;
+}
+
+.project__extra--trio {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.project__extra img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ══════════════════════════════════════
+   VIDEO
+   ══════════════════════════════════════ */
+.project__col video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project__video-inline {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+/* ══════════════════════════════════════
+   NAVIGATION — Bas de page
    ══════════════════════════════════════ */
 .project__nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 40px;
-  border-top: 2px solid #000000;
-  margin-top: 40px;
+  padding: 20px 84px;
+  background: #FFFFFF;
 }
 
 .project__nav a {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 2px;
-  gap: 10px;
-  height: 28px;
-  background: #000000;
-  font-family: 'Helvetica Neue eText Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 28px;
-  letter-spacing: -0.05em;
-  text-transform: uppercase;
-  color: #C7C7C7;
+  font-family: 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 92%;
+  letter-spacing: -0.01em;
+  color: #0019FF;
   text-decoration: none;
+  padding: 6px;
 }
 
 .project__nav a:hover {
-  background: #C7C7C7;
-  color: #000000;
+  background: #0019FF;
+  color: #FFFFFF;
+  transition: background 0s, color 0s;
 }

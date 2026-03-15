@@ -111,6 +111,7 @@ body {
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: #C7C7C7;
+  transition: background 0s, color 0s;
 }
 
 /* ── Link wrapper ── */

@@ -248,7 +248,8 @@
 }
 
 .project__figure:hover img {
-  filter: brightness(0.92);
+  filter: brightness(0.88);
+  transition: filter 0s;
 }
 
 /* ── Figcaption (cartouche bleue h:18) ── */
